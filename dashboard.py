@@ -11,8 +11,13 @@ from datetime import datetime
 # =====================================
 
 st.set_page_config(
-    page_title="KRAZ Lead Intelligence",
+    page_title="KRAZ Recruitment Intelligence Platform",
     layout="wide"
+)
+
+st.title("KRAZ Recruitment Intelligence Platform")
+st.caption(
+    "Automated recruitment agency extraction, filtering, ranking and outreach intelligence system."
 )
 
 DATA = Path("data")
