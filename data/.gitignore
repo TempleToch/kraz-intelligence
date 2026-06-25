@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+
+logs/*.log
+
+data/*.xlsx
+data/*.csv
+
+.streamlit/
+
+venv/
+.env/
+
+.vscode/
