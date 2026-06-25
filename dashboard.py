@@ -262,6 +262,51 @@ with col3:
         "Outreach Ready",
         len(outreach)
     )
+st.divider()
+
+st.subheader("Visual Analytics")
+
+city_counts = (
+    foreigners["miejscowosc"]
+    .value_counts()
+    .head(10)
+)
+
+st.subheader("Top 10 Cities")
+
+st.bar_chart(city_counts)
+
+if "wojewodztwo" in foreigners.columns:
+
+    region_counts = (
+        foreigners["wojewodztwo"]
+        .value_counts()
+        .head(10)
+    )
+
+    st.subheader("Top Regions")
+
+    st.bar_chart(region_counts)
+
+    st.subheader("Lead Dataset Distribution")
+
+summary = pd.DataFrame({
+    "Dataset": [
+        "Foreigner Agencies",
+        "Ranked Leads",
+        "Outreach Ready"
+    ],
+    "Count": [
+        len(foreigners),
+        len(ranked),
+        len(outreach)
+    ]
+})
+
+st.bar_chart(
+    summary.set_index("Dataset")
+)
+
 
 # =====================================
 # SEARCH
